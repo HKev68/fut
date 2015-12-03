@@ -272,6 +272,8 @@ class Core(object):
         })
         rc = self.r.get(self.urls['acc_info'], params={'_': int(time() * 1000)})
         self.logger.debug(rc.content)
+        with open('fut.log', 'w') as f:
+            f.write(rc.content)
         # pick persona (first valid for given game_sku)
         personas = rc.json()['userAccountInfo']['personas']
         for p in personas:
