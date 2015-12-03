@@ -281,7 +281,7 @@ class Core(object):
             # sort clubs by lastAccessTime (latest first)
             # self.clubs.sort(key=lambda i: i['lastAccessTime'], reverse=True)
             for c in p['userClubList']:
-                if game_sku in c.get('skuAccessList'):
+                if game_sku in c['skuAccessList']:
                     self.persona_id = p['personaId']
                     self.persona_name = p['personaName']
                     break
